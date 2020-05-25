@@ -2,6 +2,8 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QTimer>
+#include "netinfo.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -15,7 +17,12 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+public slots:
+    void dataUpdata(NetDaTa &onDataUpdata);
+
 private:
     Ui::Widget *ui;
+    NetInfo *_netinfo;
+    QTimer *_timer;
 };
 #endif // WIDGET_H

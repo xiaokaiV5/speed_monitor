@@ -17,9 +17,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
+    netinfo.cpp \
     widget.cpp
 
 HEADERS += \
+    netinfo.h \
     widget.h
 
 FORMS += \
@@ -29,3 +31,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    png.qrc
