@@ -16,7 +16,6 @@ Widget::Widget(QWidget *parent)
         (ui->label_Rx->width()/4, ui->label_Rx->height()-5, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     this->setWindowFlags(Qt::FramelessWindowHint);//去掉标题栏
     QDesktopWidget* desktop = QApplication::desktop();
-    //qDebug()<<desktop->width() - this->width()<<desktop->height() - this->height()<<endl;
     this->setGeometry(QRect(desktop->width()-50, desktop->height()-100, 50, 30));//可设置窗口显示的方位与大
 
     _netinfo = new NetInfo;
