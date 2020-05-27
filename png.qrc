@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>png/down.png</file>
         <file>png/up.png</file>
+        <file>gauge_arc.qml</file>
     </qresource>
 </RCC>

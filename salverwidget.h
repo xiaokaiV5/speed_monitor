@@ -16,6 +16,7 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+    void mouseDoubleClickEvent(QMouseEvent *event);
 
 public slots:
     void dataUpdata(NetDaTa &onDataUpdata);

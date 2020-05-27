@@ -1,4 +1,4 @@
-#include "widget.h"
+#include "salverwidget.h"
 #include "ui_widget.h"
 #include <QDesktopWidget>
 #include <QDebug>
@@ -16,8 +16,8 @@ Widget::Widget(QWidget *parent)
         (ui->label_Rx->width()/4, ui->label_Rx->height()-5, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     this->setWindowFlags(Qt::FramelessWindowHint);//去掉标题栏
     QDesktopWidget* desktop = QApplication::desktop();
-    this->setGeometry(QRect(desktop->width()-50, desktop->height()-100, 50, 30));//可设置窗口显示的方位与大
-
+    this->setGeometry(QRect(desktop->width()-80, desktop->height()-100, 50, 30));//可设置窗口显示的方位与大
+#if 0
     _netinfo = new NetInfo;
     qRegisterMetaType<NetDaTa>("NetDaTa");
     connect(_netinfo, &NetInfo::onDataUpdata, this, &Widget::dataUpdata);
@@ -25,6 +25,8 @@ Widget::Widget(QWidget *parent)
     _timer = new QTimer(this);
     connect(_timer, &QTimer::timeout, _netinfo, &NetInfo::onExcuseCmd);
     _timer->start(1000);
+#endif
+    
 }
 
 Widget::~Widget()
@@ -38,6 +40,12 @@ Widget::~Widget()
         delete _timer;
         _timer=nullptr;
     }
+}
+
+void Widget::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    static int count=0;
+    qDebug()<<"mouseDoubleClickEvent: "<<count++<<endl;
 }
 
 void Widget::dataUpdata(NetDaTa &onDataUpdata)

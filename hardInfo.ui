@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>infowidget</class>
+ <widget class="QWidget" name="infowidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>391</width>
+    <height>381</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>System resource usage</string>
+  </property>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

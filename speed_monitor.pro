@@ -1,6 +1,8 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += quickwidgets
+
 
 CONFIG += c++11
 
@@ -16,18 +18,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    allinfowidget.cpp \
     linuxHardInfo.cpp \
     main.cpp \
     netinfo.cpp \
-    widget.cpp
+    salverwidget.cpp
 
 HEADERS += \
+    allinfowidget.h \
     linuxHardInfo.h \
     netinfo.h \
-    widget.h
+    salverwidget.h
 
 FORMS += \
-    widget.ui
+    hardInfo.ui \
+    salverwidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
