@@ -1,5 +1,5 @@
 #include "salverwidget.h"
-#include "ui_widget.h"
+#include "ui_salverwidget.h"
 #include <QDesktopWidget>
 #include <QDebug>
 #include <QMetaType>
@@ -17,7 +17,7 @@ Widget::Widget(QWidget *parent)
     this->setWindowFlags(Qt::FramelessWindowHint);//去掉标题栏
     QDesktopWidget* desktop = QApplication::desktop();
     this->setGeometry(QRect(desktop->width()-80, desktop->height()-100, 50, 30));//可设置窗口显示的方位与大
-#if 0
+#if 1
     _netinfo = new NetInfo;
     qRegisterMetaType<NetDaTa>("NetDaTa");
     connect(_netinfo, &NetInfo::onDataUpdata, this, &Widget::dataUpdata);
